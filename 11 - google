@@ -1,0 +1,7 @@
+site:nytimes.com - site:www.nytimes.com
+(site:nytimes.com -site:www.nytimes.com) AND (inurl:login)
+(site:nytimes.com -site:www.nytimes.com) AND (inurl:login OR inurl:signup)
+inurl:"phpmyadmin/index.php" AND intitle:"phpMyadmin 2.11"
+intitle:SQLiteManager inurl:/sqlite/ intext:"Welcome to"
+intitle:"index of" AND inurl:tesla.com
+intitle:"index of" ANDD inurl:ftp

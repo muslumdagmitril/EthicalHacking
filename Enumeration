@@ -1,0 +1,162 @@
+NMAP
+
+# Alive hosts
+nmap -sn 10.0.0.0/24	
+
+# scan the 1024 most common ports, run OS detection, run default nmap scripts
+nmap -A -oA nmap <targetip>	
+
+# Scan more deeply, scan all 65535 ports on $targetip with a full connect scan
+nmap -v -sT <targetip> -p- 
+
+# more options
+nmap -sV -sC -v -A <targetip> -p- 
+nmap -sT -sV -A -O -v -p 1–65535 <targetip> 
+
+# my preference
+nmap -sV -sC -v -oA output <targetip>
+nmap -p- -v <targetip>
+-----------------------
+# SSH msfconsole 
+use exploit/multi/ssh/sshexec
+-----------------------
+# KNOCK KNOCK
+nmap -p 22 <ipadres> | Filter
+knockd <sayilar> 
+
+------------------------
+# DNS 
+fierce -dns <domain> : zone transfer
+dnsrecon <domain> : zone transfer
+dns-zone-transfer.nse : nmap zone transfer
+dns-recursion.nse : nmap recursive scan transfer
+dns-brute.nse : nmap dns brute force
+auxiliary/gather/enum_dns : msfconsole enumeration dns 
+auxiliary/scanner/dns/dns_amp : msfconsole dns amplication 
+ 
+-----------------------
+SMB
+
+Port 139 and 445- SMB/Samba shares
+Samba is a service that enables the user to share files with other machines
+works the same as a command line FTP client, may browse files without even having credentials
+
+# Share List:
+smbclient --list <targetip>
+smbclient -L <targetip>
+
+# Msfconsole smb connection for linux
+use auxiliary/admin/smb/samba_symlink_traversal
+
+# Check SMB vulnerabilities:
+nmap --script=smb-check-vulns.nse <targetip> -p445
+
+# basic nmap scripts to enumerate shares and OS discovery
+nmap -p 139,445 192.168.1.1/24 --script smb-enum-shares.nse smb-os-discovery.nse
+
+# Connect using Username
+root@kali:~# smbclient -L <targetip> -U username -p 445
+
+# Connect to Shares
+smbclient \\\\<targetip>\\ShareName
+smbclient \\\\<targetip>\\ShareName -U john
+
+# enumarete with smb-shares, -a “do everything” option
+enum4linux -a 192.168.1.120
+
+# learn the machine name and then enumerate with smbclient
+nmblookup -A 192.168.1.102
+smbclient -L <server_name> -I 192.168.1.105
+
+# rpcclient - Connect with a null-session (only works for older windows servers)
+rpcclient -U james 10.10.10.52
+rpcclient -U "" 192.168.1.105
+(press enter if asks for a password)
+rpcclient $> srvinfo
+rpcclient $> enumdomusers
+rpcclient $> enumalsgroups domain
+rpcclient $> lookupnames administrators
+rpcclient> querydominfo
+rpcclient> enumdomusers
+rpcclient> queryuser john
+
+# scan for vulnerabilities with nmap
+nmap --script "vuln" <targetip> -p139,445
+
+# Windows smb
+msfconsole :
+auxiliary/scanner/smb/smb_login
+psexec.py PENTEST0/<kullanıcıadı>:<şifre>@<ipadresi
+psexec.py PENTEST0/Administrator:123456@192.168.1.51
+python psexec.py <username>@<ipadres> cmd
+
+\\<DOMAIN>\SYSVOL\<DOMAIN>\Policies\
+parolalar groups.xml ,scheduledtasks.xml,services.xml vb dosyalar icerisinde parola bilgileri olabilir.
+smbclient \\\\ipadres\\SYSVOL -U 'domain\user'
+------------------------
+
+SMTP
+
+# telnet or netcat connection
+nc <targetip> 25
+VRFY root
+# Check for commands
+nmap -script smtp-commands.nse <targetip>
+# Metasploit
+smtp_enum
+smtp_relay
+
+------------------------
+
+Port 111 - RPC
+
+Rpcbind can help us look for NFS-shares. So look out for nfs. Obtain list of services running with RPC:
+
+rpcbind -p <targetip>
+rpcinfo –p x.x.x.x
+
+# using nmap, see which port NFS is listening
+locate *rpc*.nse
+nmap --script rpcinfo.nse <targetip> -p 111
+
+-------------------------
+
+NFS
+
+# to find the public share
+locate *nfs*.nse
+nmap --script nfs-showmount.nse <targetip>
+
+# mount the share to a folder under /tmp
+mkdir /tmp/nfs
+/sbin/mount.nfs <targetip>:/home/box /tmp/nfs
+
+------------------------
+WEBDAV
+
+davtest <ipadres>
+
+# file upload basic 
+curl -T 'm.txt' 'http://192.168.1.48/dav/hac.txt'
+
+-----------------------
+WPSCAN
+
+wpscan --url <url> --enumerate
+wpscan --url <url> --username <username> -P wordlist.txt
+
+----------------------
+JOOMLA
+
+joomscan <target>
+joomscan -u http://target.com/joomla
+
+----------------------
+DRUPAL
+
+droopescan scan drupal -u URL_HERE                                                                                                                                  
+droopescan scan silverstripe -u URL_HERE
+
+
+
+

