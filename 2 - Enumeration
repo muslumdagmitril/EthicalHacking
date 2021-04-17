@@ -132,30 +132,19 @@ mkdir /tmp/nfs
 /sbin/mount.nfs <targetip>:/home/box /tmp/nfs
 
 ------------------------
-WEBDAV
 
-davtest <ipadres>
+SNMP
 
-# file upload basic 
-curl -T 'm.txt' 'http://192.168.1.48/dav/hac.txt'
+snmp-check -c public <ipadresi> // 161 numarali router uzerinde ki public dosyasina erisim saglariz.
+snmp-check -c private <ipadresi>
 
------------------------
-WPSCAN
+snmp-check -p 161 -c private -w <ipadresi>
+snmp-check -p 161 -c public -w <ipadresi> // yazma yetkisi kontrolleri
 
-wpscan --url <url> --enumerate
-wpscan --url <url> --username <username> -P wordlist.txt
+onesixtyone <ipadresi> // community testlleri 
 
-----------------------
-JOOMLA
-
-joomscan <target>
-joomscan -u http://target.com/joomla
-
-----------------------
-DRUPAL
-
-droopescan scan drupal -u URL_HERE                                                                                                                                  
-droopescan scan silverstripe -u URL_HERE
+cisco_config_tftp // metasploit module
+cisco_upload_tftp //comunnity name tespitinden sonra yeni bir config dosyayisini yuklemek icin kullanilir.
 
 
 
