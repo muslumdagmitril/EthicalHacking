@@ -232,6 +232,6 @@ $ x86_64-w64-mingw32-gcc
 // Target 32-bit native Windows
 $ i686-w64-mingw32-gcc
 // Linux
-gcc main.c -o main
+$ gcc -pthread c0w.c  -o c0w
 
 
