@@ -9,9 +9,15 @@ Github üzerinde arama alanında keywords kullanılıp filtreleme yapılarak şi
 "company" pass
 "company" login
 "company" ssh_auth_password
-
-
+"company" ftp
+"company" ssh
 
 go to apkpure.com
-
 Apk uygulamalarının eski versiyonlarını indirip tarama yapabiliriz.
+
+shodan:
+hostname:company.com product:"PostgreSQL"
+"windows server 2003" country:US port:445
+
+pastebin:
+free database...
