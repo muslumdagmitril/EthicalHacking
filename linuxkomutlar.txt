@@ -1,0 +1,48 @@
+cat /proc/cpuinfo : cpu ile ilgili bilgilendirir. 
+cat /proc/meminfo : memori ile ilgili bilgi verir.
+df -h : veri kullanımı hakkında bilgi verir.
+useradd -m <kullaniciadi> #kullanici ekler
+userdel <kullaniciadi> #kullanici siler
+passwd <sifre> #kullaniciya sifre saglar
+
+unshadow /etc/passwd /etc/shadow iki dosyayı birleştirir
+
+
+cat > <dosya adi> #dosya olusturulucak ve icine yazman icin terminal uzerinde acilacak.
+cat -ilkdosya-ikincidosyaadi- > -dosyaadi- # iki dosyayi birlestirerek bir dosyaya atmaya yarar
+
+
+mv -degistirilmekistenendosya- -yeniadi- #varolan dosyanin adini degistirir
+rm -r <klasotadi> #bu sayede klasorler ve dizinlerisiler
+rmdir <klasoradi> #buda dosyayi siler 
+
+
+cp <dosyaadi> ve <kopyalanacagiyer> #dosya kopyalanir.
+ln <dosyaadi> ve <kopyalanacadres> #ancak burada yapilicak butun degisiklikler kopyalanan dosya icerisinede uygulanacaktir.
+
+Eger dosyalarin basina . koyarsan dosya gizlenir bunlari gormek icin ls -a komutunu calisttirabilirsin.
+
+wc #komutu ile satir-kelimesayisi-harfsayisi bakabiliyoruz.
+wc -l satir sayisi
+wc -w kelime sayisi
+wc -c harf sayisi
+
+file * #dizin icerisinde ki klasor veya dosyalarin turlerini gosterir
+sort #dosyalar icerisindeki verileri siralar
+sort -r #dosya icerisindeki verileri ters cevirerek isler.
+
+compress -v <dosyaadi> #dosyayi sikistirir.
+rev <dosyaadi> belirtilen dosya icerisindeki verileri tersten okumanizi saglar.
+more <dosyaadi> uzun ve yogun verilerin bulundugu dosyalari komut ekranina sigicak sekilde acar
+head <dosyaadi> | grep -i "deneme" #dosya icerisinde denemee kelimesini arar
+find brandfolder/ -type f -name "*.php*" | xargs grep -l '$_GET\|$_POST\|$_REQUEST' | xargs grep -in '$_GET\|$_POST\|$_REQUEST'
+
+
+w = girdigimiz saati gosterir ne kadar login oldugumuzu
+who -a = onyuklemenin ne zaman yapildigini vs goruntuler
+last -a = kullanicinin hangi tarihlerde sisteme girdigini goruntuler
+df -h = disk kullanimini gosterir
+
+
+cat /etc/-*release = isletim sistemi hakkinda bilgi verir
+cat /etc/issue = isletim sistemi hakkinda bilgi verir
