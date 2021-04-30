@@ -197,6 +197,13 @@ hydra -l user -P passlist.txt ftp://192.168.0.1
 *Medusa
 medusa -h <targetip> -u admin -P /usr/share/wordlists/rockyou.txt -M http -m DIR:/test -T 10
 
+crunch 4 5 abc123 -o wordlist.txt = minumum 4 maximum 5 karakterden olusturur.
+? ? 2 3 ? 8 ? = soru isaretleri olan yerleri bilmiyoruz sifre ile doldurucaz.(7 karakter var)
+crunch 7 7 -t %%23%8% 1234567890 -o wordlist.txt = bilmedigimiz karakterlerin yerine % isareti koyuyoruz.
+crunch 12 12 -t sinem.sinem% 123456789abcdefgh -o wordlist.txt
+crunch 17 17 -t kocatepe%%%%%%%%% 123456789abcdefgh  > d.txt örneğin kocatepe arkasına yüzdelik işaretler ile 9 tane daha harf ve sayı gelmesini istedik böylece
+kcoatepe kelime sayısı ile birlikte 17 tane karakter belirledik
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #FileTransfer Linux
 
@@ -248,4 +255,6 @@ $ i686-w64-mingw32-gcc
 // Linux
 $ gcc -pthread c0w.c  -o c0w
 
-
+------------------------------------------
+# Basic Source Code Analysis
+find brandfolder/ -type f -name "*.php*" | xargs grep -l '$_GET\|$_POST\|$_REQUEST' | xargs grep -in '$_GET\|$_POST\|$_REQUEST'
