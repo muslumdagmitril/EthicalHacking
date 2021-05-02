@@ -261,3 +261,7 @@ $ gcc -pthread c0w.c  -o c0w
 ------------------------------------------
 # Basic Source Code Analysis
 find brandfolder/ -type f -name "*.php*" | xargs grep -l '$_GET\|$_POST\|$_REQUEST' | xargs grep -in '$_GET\|$_POST\|$_REQUEST'
+
+------------------------------------------
+
+msfconsole search phpmyadmin_login : phpmyadmin auxiliary brute force
