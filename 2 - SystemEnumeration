@@ -147,5 +147,9 @@ cisco_config_tftp // metasploit module
 cisco_upload_tftp //comunnity name tespitinden sonra yeni bir config dosyayisini yuklemek icin kullanilir.
 
 
+-------------------------------------------------------
+#SSH
 
+msfconsole post module : ssh_creds
+hydra bruteforce
 
