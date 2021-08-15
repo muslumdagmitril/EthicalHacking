@@ -33,6 +33,8 @@ dns-recursion.nse : nmap recursive scan transfer
 dns-brute.nse : nmap dns brute force
 auxiliary/gather/enum_dns : msfconsole enumeration dns 
 auxiliary/scanner/dns/dns_amp : msfconsole dns amplication 
+host -t ns zonetranfer.me : name serverları tespit ediyoruz
+host -l zonetranfer.me nsztm2.digi.ninja. : sonra site adı ve name server ile zone tranfers kontrolü yapıyoruz.
  
 -----------------------
 SMB
