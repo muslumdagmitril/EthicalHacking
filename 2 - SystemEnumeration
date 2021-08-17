@@ -62,6 +62,7 @@ root@kali:~# smbclient -L <targetip> -U username -p 445
 # Connect to Shares
 smbclient \\\\<targetip>\\ShareName
 smbclient \\\\<targetip>\\ShareName -U john
+sbmclient //<targetip>/tmp
 
 # enumarete with smb-shares, -a “do everything” option
 enum4linux -a 192.168.1.120
