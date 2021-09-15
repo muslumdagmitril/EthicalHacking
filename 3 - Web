@@ -25,6 +25,11 @@ https://crt.sh/
 https://www.shodan.io/
 https://www.garykessler.net/library/file_sigs.html
 https://public-dns.info/ -recursive dns tespiti için
+https://aleph.occrp.org : Önemli belgeler
+https://temp-mail.org/tr/?__cf_chl_jschl_tk__=pmd_8pYLCaNnrIg38hIFG_PQOjcVseWpzcmMEqpFzYthgFY-1631740059-0-gqNtZGzNAhCjcnBszQpl : geçici mail
+https://www.businessyeti.com/Apps/CreditCardGenerator/
+hunter.io/
+https://receive-smss.com/ : sms doğrulamaları için site
 --------------------------------------------
 # Dns zone Enum
 fierce -dns <adress>
