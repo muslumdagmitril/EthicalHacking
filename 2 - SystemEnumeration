@@ -149,6 +149,7 @@ onesixtyone <ipadresi> // community testlleri
 cisco_config_tftp // metasploit module
 cisco_upload_tftp //comunnity name tespitinden sonra yeni bir config dosyayisini yuklemek icin kullanilir.
 
+auxiliary/scanner/snmp/snmp_login : metasploit
 
 -------------------------------------------------------
 #SSH
