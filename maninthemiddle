@@ -19,7 +19,7 @@ net.sniff on
 icmp redirect : ettercap -G 
 dhcp spoofing : ettercap -G
 dhcp starvation : etttercap -G 
-macof : macof -i <interface> 
+macof : macof -i <interface> -s <ipadresi> -n 10000  : cam tablosunu doldurarak switchi yavaşlatabilir bu sayede ağa yeni cihazların katılması engellenir.
 
 
 
