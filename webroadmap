@@ -1,0 +1,18 @@
+1 - Domain tarama
+2 - Subdomain tarama (zone transfer)
+3 - Dizin tarama (dirb,wfuzz)
+4 - Dosya tarama (dirbuster)
+5 - Xss
+6 - sql injection or sql injection login bypass
+7 - command execution
+8 - code injection
+9 - shellshock
+  - file inclusion
+  - directory traversel
+10 - Ssi (ssi.shtml)
+11 - Arbitrary file upload
+12 - html injection
+13 - İstekleri manipüle etme (burp suite)
+14 - Cookieler ile şifreleri kırma (https://jwt.io/)
+15 - Yetkili kullanıcılar oluşturma 
+16 - html taraflı inputları manipile etme 
