@@ -2,7 +2,7 @@
 2 - Subdomain tarama (zone transfer)
 3 - Dizin tarama (dirb,wfuzz)
 4 - Dosya tarama (dirbuster)
-5 - Xss
+5 - Xss - xxe
 6 - sql injection or sql injection login bypass
 7 - command execution
 8 - code injection
